@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{ foo }}</p>
+    <button v-on:click="foo = 'bac'">Change it </button>
+</div>
+
+
+</body>
+<script>
+    var data = {a:1}
+    var obj = {
+        foo:'bar'
+    }
+    Object.freeze(obj)
+
+   var vm = new Vue({
+        el:'#app',
+        data:data
+    })
+    vm.$data === data
+    vm.$el === document.getElementById('app')
+    vm.$watch('a',function(newValue,oldValue){
+        // 这个回调将在 `vm.a` 改变后调用
+    })
+</script>
+</html>

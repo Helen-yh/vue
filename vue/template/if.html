@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+  <span v-show="ifshow">ddd</span>
+
+</div>
+
+<ul id="example-2">
+  <li v-for="(item, index) of items">
+    {{ parentMessage }} - {{ index }} - {{ item.message }}
+  </li>
+</ul>
+
+
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            ifshow:false
+        }
+    })
+    var example2 = new Vue({
+      el: '#example-2',
+      data: {
+        parentMessage: 'Parent',
+        items: [
+          { message: 'Foo' },
+          { message: 'Bar' }
+        ]
+      }
+})
+</script>
+</html>

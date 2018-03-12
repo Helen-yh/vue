@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <p v-bind:title = "message">dddd</p>
+    <span v-if="seen">hello</span>
+    <p v-for="todo in todos" >
+        {{todo.text}}
+    </p>
+    <button v-on:click="reverseMessage">huihui</button>
+    <input type="text" v-model="title">
+    <p>{{title}}</p>
+</div>
+<todoItem></todoItem>
+</body>
+</html>
+<script>
+   var app1 = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue js',
+            title:'helen',
+            seen:false,
+            todos:[
+                { text:'学习 JavaScript'},
+                { text:'学习 Vue'},
+                { text:'整个牛项目'}
+            ]
+        },
+       methods:{
+           reverseMessage:function(){
+               this.message = "huihui"
+           }
+       }
+    })
+    Vue.component('todoItem', {
+        template: '<div>ssssssssssssssssssssssss</div>'
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+<div id="app">
+    <p> Message: {{msg}}</p>
+    <input v-model="msg">
+    <p v-once>这个将不会改变: {{ msg }}</p>
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+    <p>{{number + 1}}</p>
+    <!--<a v-on:click="doSomething"></a>-->
+</div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            msg:"hh",
+            rawHtml:'<span style="color:red">This should be red</span>',
+            number:1
+        }
+    })
+</script>
+</html>
